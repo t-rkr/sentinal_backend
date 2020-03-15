@@ -8,7 +8,7 @@ class Graphs:
         csv_filename = os.path.join(app.root_path, 'graphs\\data', 'DECCC.csv')
         self.df = pd.read_csv(csv_filename)
         self.df['timestamp'] = pd.to_datetime(self.df['timestamp']).apply(lambda x: x.date())
-
+        #This is still WIP
         self.year_count = {}
 
     def get_daily_metrics(self):

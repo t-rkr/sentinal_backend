@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify
 import chatbot.chatbot as chatbot
 import graphs.graphs as graphs
 import sentiments.sentiments as sentiments
+import tweets.tweets as tweets
 
 
 
@@ -19,7 +20,7 @@ def predict():
     #return jsonify(res)
     return "Cool!"
 
-@app.route("/tweets", methods=["GET","POST"])
+@app.route("/metrics", methods=["GET","POST"])
 def get_tweet_metrics():
     print(request.args)
     scope = request.args.get('scope')
@@ -37,12 +38,17 @@ def get_tweet_metrics():
 def get_graphData():
     pass
 
+@app.route("/tweets",methods=["GET","POST"])
+def get_tweets():
+    data = t_tweets.get_recent_tweets(10)
+    return data
 
 
 if __name__ == "__main__":
     #Init all the ML Models
-    global chat_bot, t_graph
+    global chat_bot, t_graph, t_tweets
     chat_bot = chatbot.Chatbot(app)
     t_graph = graphs.Graphs(app)
+    t_tweets = tweets.Tweets(app)
     #Have a config file for ports and static stuff
     app.run()
