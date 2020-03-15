@@ -1,0 +1,88 @@
+{
+    "intents": [{
+            "tag": "greeting",
+            "patterns": ["Hi there", "How are you", "Is anyone there?", "Hey", "Hola", "Hello", "Good day"],
+            "responses": ["Hello, thanks for asking", "Good to see you again", "Hi there, how can I help?"],
+            "context": [""]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
+            "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+            "context": [""]
+        },
+        {
+            "tag": "thanks",
+            "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+            "responses": ["Happy to help!", "Any time!", "My pleasure"],
+            "context": [""]
+        },
+        {
+            "tag": "noanswer",
+            "patterns": [],
+            "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
+            "context": [""]
+        },
+        {
+            "tag": "options",
+            "patterns": ["How you could help me?", "What you can do?", "What help you provide?", "How you can be helpful?", "What support is offered"],
+            "responses": ["I am a chatbot for Singtel. I can help you with text ananlysis of twitter data and make you work smarter instead of harder", "I perform sentiment analysis on the twitter data, to help the customers and Clients"],
+            "context": [""]
+        },
+        {
+            "tag": "Negative_tweet",
+            "patterns": ["What are the most negative tweet?", "most negative tweet of 2019? ", "Which was the most negative tweeted by user", "Negative tweet", "Hated tweets for Singtel "],
+            "responses": ["The most negative tweet was on 11-07-2019: UGHHHH...Fuck Singtel 4G. Keeps disconnecting at least once a day out of nowhere."],
+            "context": [""]
+        },
+        {
+            "tag": "positive_tweet",
+            "patterns": ["What are the most positive tweet?", "most positive tweet of 2019?", "Which was the most positive tweeted by user", "Positive tweet", "Loved tweets for Singtel "],
+            "responses": ["That would be tweet on 18-03-2019: Singtel provides the best plan in Singapore with lower rates and awesome services."],
+            "context": [""]
+        },
+        {
+            "tag": "grievances",
+            "patterns": ["What was the grievance most talked about in 2019", "Most common grievance", "grievances", "grievances by people tweeted about Singtel"],
+            "responses": ["The grievance most taked on twitter was the plan prize and benefits"],
+            "context": [""]
+        },
+        {
+            "tag": "highest_tweets",
+            "patterns": ["Which month recorded highest number of tweets", "Most number of tweets", "Highest tweeted month", "When was Singtel most taked ?"],
+            "responses": ["October recorded most number of tweets due to change in their plans"],
+            "context": [""]
+        },
+        {
+            "tag": "lowest_tweets",
+            "patterns": ["Lowest number of tweets", "lowest tweets for Singtel", "Which month recorded the lowest number of tweets", "less tweets were recorded in which month"],
+            "responses": ["March recorded lowest number of tweets in 2019"],
+            "context": [""]
+        },
+    
+        {
+            "tag": "most_retweeted",
+            "patterns": ["Which was the most retweeted tweet", "Most popular tweet for Singtel", "Most liked tweet for Singtel", "Retweeted tweet", "intesresting tweet of 2019"],
+            "responses": ["4062 time retweeted tweet was @NCTsmtown_DREAM will be visiting  with their new concert NCT DREAM"],
+            "context": [""]
+        },
+        {
+            "tag": "other_telecom",
+            "patterns": ["Which other telecom was discussed apart from Singtel in tweets", "Which other telecom was most discussed?", "Who holds biggest competition with Singtel?"],
+            "responses": ["Starhub holds biggest competition and is compared with Singtel maximum time"],
+            "context": []
+        },
+        {
+            "tag": "Churning",
+            "patterns": ["How many users shoutout of leaving on twitter?", "Leaving", "How many people left after announcing on twitter?", "How many people churned after shoutout?"],
+            "responses": ["Approx 1240 people talked about leaving Singtel on twitter"],
+            "context": [""]
+        },
+        {
+            "tag": "Singtel_growth",
+            "patterns": ["Did negative tweets impacted growth for Singtel?", "What was the impact of growth of Singtel based on tweets?", "Impact of growth based on tweets"],
+            "responses": ["Yes, March had most negative tweets and fall in stock prices "],
+            "context": []
+        }
+    ]
+}
