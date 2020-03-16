@@ -43,12 +43,17 @@ def get_tweets():
     data = t_tweets.get_recent_tweets(5)
     return data
 
+@app.route("/polarity", methods=["GET"])
+def get_polarity():
+    data = t_sentis.get_polarity()
+    return data
 
 if __name__ == "__main__":
     #Init all the ML Models
-    global chat_bot, t_graph, t_tweets
+    global chat_bot, t_graph, t_tweets, t_sentis
     chat_bot = chatbot.Chatbot(app)
     t_graph = graphs.Graphs(app)
     t_tweets = tweets.Tweets(app)
+    t_sentis = sentiments.Sentiments(app)
     #Have a config file for ports and static stuff
     app.run()
