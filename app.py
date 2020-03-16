@@ -40,7 +40,7 @@ def get_graphData():
 
 @app.route("/tweets",methods=["GET","POST"])
 def get_tweets():
-    data = t_tweets.get_recent_tweets(10)
+    data = t_tweets.get_recent_tweets(5)
     return data
 
 
