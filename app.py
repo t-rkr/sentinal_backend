@@ -19,7 +19,7 @@ def predict():
     #print(res)
     #return jsonify(res)
     return "Cool!"
-
+#todo: sort monthly data
 @app.route("/metrics", methods=["GET","POST"])
 def get_tweet_metrics():
     print(request.args)
@@ -33,10 +33,6 @@ def get_tweet_metrics():
     else:
         data = t_graph.get_yearly_metrics()
     return data
-
-@app.route("/graphData",methods=["GET","POST"])
-def get_graphData():
-    pass
 
 @app.route("/tweets",methods=["GET","POST"])
 def get_tweets():
