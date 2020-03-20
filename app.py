@@ -12,27 +12,26 @@ app = Flask(__name__)
 @app.route("/chat", methods=["POST"])
 def predict():
     message = "hello"
-    #print(request.args.get('message'))
+    print(request.args.get('message'))
     message = request.args.get('message')
     intents = chat_bot.predict_class(message, chat_bot.model)
-    #res = chatbot.getResponse(intents, intents)
-    #print(res)
-    #return jsonify(res)
-    return "Cool!"
+    res = chat_bot.getResponse(intents)
+    print(res)
+    return jsonify(res)
+    #return "Cool!"
 #todo: sort monthly data
 @app.route("/metrics", methods=["GET","POST"])
 def get_tweet_metrics():
     print(request.args)
     scope = request.args.get('scope')
     print(scope)
-    data = None
+
     if scope == "day":
-        data = t_graph.get_daily_metrics()
+        return jsonify(t_graph.get_daily_metrics())
     elif scope == "month":
-        data = t_graph.get_monthly_metrics()
+        return jsonify(t_graph.get_monthly_metrics())
     else:
-        data = t_graph.get_yearly_metrics()
-    return data
+        return jsonify(t_graph.get_yearly_metrics())
 
 @app.route("/tweets",methods=["GET","POST"])
 def get_tweets():
