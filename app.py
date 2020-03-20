@@ -36,12 +36,12 @@ def get_tweet_metrics():
 @app.route("/tweets",methods=["GET","POST"])
 def get_tweets():
     data = t_tweets.get_recent_tweets(5)
-    return data
+    return jsonify(data)
 
 @app.route("/polarity", methods=["GET"])
 def get_polarity():
     data = t_sentis.get_polarity()
-    return data
+    return jsonify(data)
 
 if __name__ == "__main__":
     #Init all the ML Models
