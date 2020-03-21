@@ -11,7 +11,6 @@ app = Flask(__name__)
 
 @app.route("/chat", methods=["POST"])
 def predict():
-    message = "hello"
     print(request.args.get('message'))
     message = request.args.get('message')
     intents = chat_bot.predict_class(message, chat_bot.model)
