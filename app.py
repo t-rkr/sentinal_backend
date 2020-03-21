@@ -32,6 +32,11 @@ def get_tweet_metrics():
     else:
         return jsonify(t_graph.get_yearly_metrics())
 
+@app.route('/userMetrics', methods=["GET"])
+def get_user_metrics():
+    data = t_graph.get_user_metrics()
+    return jsonify(data)
+
 @app.route("/tweets",methods=["GET","POST"])
 def get_tweets():
     data = t_tweets.get_recent_tweets(5)
@@ -40,6 +45,11 @@ def get_tweets():
 @app.route("/polarity", methods=["GET"])
 def get_polarity():
     data = t_sentis.get_polarity()
+    return jsonify(data)
+
+@app.route("/totalTweets",methods=["GET"])
+def get_total_tweets():
+    data = t_graph.get_total_tweets()
     return jsonify(data)
 
 if __name__ == "__main__":
