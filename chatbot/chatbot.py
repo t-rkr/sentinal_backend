@@ -24,9 +24,11 @@ class Chatbot:
         self.classes = pickle.load(open(classes_filename, 'rb'))
         self.model = load_model(model_filename)
         self.lemmatizer = WordNetLemmatizer()
+        self.session = tf.Session()
         self.graph = tf.get_default_graph()
-
-        print("Model Loaded!")
+        with self.graph.as_default():
+            with self.session.as_default():
+                print("Model Loaded!")
 
     def clean_up_sentence(self,sentence):
         sentence_words = nltk.word_tokenize(sentence)
