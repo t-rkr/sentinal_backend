@@ -21,10 +21,8 @@ def predict():
 #todo: sort monthly data
 @app.route("/metrics", methods=["GET","POST"])
 def get_tweet_metrics():
-    print(request.args)
+    #print(request.args)
     scope = request.args.get('scope')
-    print(scope)
-
     if scope == "day":
         return jsonify(t_graph.get_daily_metrics())
     elif scope == "month":
@@ -34,8 +32,16 @@ def get_tweet_metrics():
 
 @app.route('/userMetrics', methods=["GET"])
 def get_user_metrics():
-    data = t_graph.get_user_metrics()
-    return jsonify(data)
+    scope = request.args.get('scope')
+    if scope == "day":
+        data = t_graph.get_user_metrics()
+        return jsonify(data)
+    elif scope == "month":
+        data = t_graph.get_user_metrics_monthly(t_graph.get_user_metrics())
+        return jsonify(data)
+    else:
+        data = t_graph.get_user_metrics()
+        return jsonify(data)
 
 @app.route("/tweets",methods=["GET","POST"])
 def get_tweets():
