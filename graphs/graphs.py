@@ -24,7 +24,7 @@ class Graphs:
     def get_monthly_metrics(self):
         month_count = {}
         for row in self.df['timestamp']:
-            print(row)
+            #print(row)
             month = calendar.month_name[row.month] if isinstance(row, datetime.date) else calendar.month_name[
                 int(row.split("-")[1])]
             if str(month) not in month_count.keys():
