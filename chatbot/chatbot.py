@@ -2,8 +2,6 @@ import numpy as np
 import nltk
 from nltk.stem import WordNetLemmatizer
 import pickle
-import flask
-import io
 import json
 import random
 import os
@@ -35,12 +33,6 @@ class Chatbot:
         sentence_words = [self.lemmatizer.lemmatize(word.lower()) for word in sentence_words]
         return sentence_words
 
-    def clean_up_sentence(self, sentence):
-        sentence_words = nltk.word_tokenize(sentence)
-        sentence_words = [self.lemmatizer.lemmatize(word.lower()) for word in sentence_words]
-        return sentence_words
-
-
     def bow(self, sentence, words, show_details=True):
         # tokenize the pattern
         sentence_words = self.clean_up_sentence(sentence)
@@ -58,7 +50,6 @@ class Chatbot:
     def predict_class(self, sentence, modelChatbot):
         # filter out predictions below a threshold
         p = self.bow(sentence, self.words, show_details=False)
-        #keras.backend.clear_session()
         res = None
         with self.graph.as_default():
             res = modelChatbot.predict(np.array([p]))[0]

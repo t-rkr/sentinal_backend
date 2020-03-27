@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+import os
 
 import chatbot.chatbot as chatbot
 import graphs.graphs as graphs
@@ -12,17 +13,14 @@ app = Flask(__name__)
 
 @app.route("/chat", methods=["POST"])
 def predict():
-    #print(request.args.get('message'))
     message = request.args.get('message')
     intents = chat_bot.predict_class(message, chat_bot.model)
     res = chat_bot.getResponse(intents)
-    print(res)
     return jsonify(res)
-    #return "Cool!"
+
 #todo: sort monthly data
 @app.route("/metrics", methods=["GET","POST"])
 def get_tweet_metrics():
-    #print(request.args)
     scope = request.args.get('scope')
     if scope == "day":
         return jsonify(t_graph.get_daily_metrics())
@@ -78,4 +76,5 @@ if __name__ == "__main__":
     t_sentis = sentiments.Sentiments(app)
     t_grev = grev.Greviance(app)
     #Have a config file for ports and static stuff
+    app.config["DATA"] =  os.path.join(app.root_path, 'data', 'data.csv')
     app.run()
