@@ -31,26 +31,26 @@
         },
         {
             "tag": "num_neg_tweet_Singtel",
-            "patterns": ["Negative tweets for this month for Singtel","What are the number of negative tweet of Jan 2019 for Singtel?", "number of negative tweet of March 2018 for Singtel", "number of negative tweet of this month for Singtel", "Negative tweet for singtel in May 2020", "Negative tweet for Singtel in April 2020"],
-            "responses": ["48 tweets", "36 tweets", "68 tweets", "42 tweets", "44 tweets", "27 tweets", "31 tweets", " 23tweets"],
+            "patterns": ["number of Negative tweets for this month for Singtel","What are the number of negative tweet of Jan 2019 for Singtel?", "number of negative tweet of March 2018 for Singtel", "number of negative tweet of this month for Singtel", "Negative tweet for singtel in May 2020", "Negative tweet for Singtel in April 2020"],
+            "responses": ["34 tweets", "36 tweets", "32 tweets", "31 tweets", "30 tweets", "28 tweets", "38 tweets", " 34 tweets"],
             "context": [""]
         },
         {
             "tag": "num_neg_tweet_Starhub",
-            "patterns": ["Negative tweets for this month for Starhub","What are the number of negative tweet of Jan 2019 for Starhub?", "number of negative tweet of March 2018 for Starhub", "number of negative tweet of this month for Starhub", "Negative tweet for starhub in May 2020", "Negative tweet for Starhub in April 2020"],
+            "patterns": ["number of Negative tweets for this month for Starhub","What are the number of negative tweet of Jan 2019 for Starhub?", "number of negative tweet of March 2018 for Starhub", "number of negative tweet of this month for Starhub", "Negative tweet for starhub in May 2020", "Negative tweet for Starhub in April 2020"],
             "responses": ["44 tweets", "32 tweets", "19 tweets", "18 tweets", "32 tweets", "20 tweets", "34 tweets", " 27 tweets"],
             "context": [""]
         },
         {
             "tag": "num_neg_tweet_M1",
-            "patterns": ["Negative tweets for this month for M1","What are the number of negative tweet of Jan 2019 for M1?", "number of negative tweet of March 2018 for M1", "number of negative tweet of this month for M1", "Negative tweet for M1 in May 2020", "Negative tweet for M1 in April 2020"],
+            "patterns": ["number of Negative tweets for this month for M1","What are the number of negative tweet of Jan 2019 for M1?", "number of negative tweet of March 2018 for M1", "number of negative tweet of this month for M1", "Negative tweet for M1 in May 2020", "Negative tweet for M1 in April 2020"],
             "responses": ["21 tweets", "22 tweets", "29 tweets", "28 tweets", "24 tweets", "20 tweets", "26 tweets", " 27 tweets"],
             "context": [""]
         },
         {
             "tag": "num_pos_tweet_Singtel",
-            "patterns": ["positive tweet of Jan 2019 for Singtel?", "What are the number of positive tweet of Jan 2019 for Singtel?", "number of positive tweet of March 2018 for Singtel", "number of positive tweet of this month for Singtel", "Positive tweet for singtel in May 2020", "Positive tweet for Singtel in April 2020"],
-            "responses": ["24 tweets", "20 tweets", "32 tweets", "21 tweets", "30 tweets", "24 tweets", "19 tweets", " 17 tweets"],
+            "patterns": ["number of positive tweet of Jan 2019 for Singtel?", "What are the number of positive tweet of Jan 2019 for Singtel?", "number of positive tweet of March 2018 for Singtel", "number of positive tweet of this month for Singtel", "Positive tweet for singtel in May 2020", "Positive tweet for Singtel in April 2020"],
+            "responses": ["74 tweets", "76 tweets", "68 tweets", "62 tweets", "67 tweets", "57 tweets", "71 tweets", " 68tweets"],
             "context": [""]
         },
         {

@@ -5,8 +5,9 @@ import pickle
 import json
 import random
 import os
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 import tensorflow as tf
+
 
 
 class Chatbot:
@@ -23,11 +24,9 @@ class Chatbot:
         self.classes = pickle.load(open(classes_filename, 'rb'))
         self.model = load_model(model_filename)
         self.lemmatizer = WordNetLemmatizer()
-        self.session = tf.Session()
-        self.graph = tf.get_default_graph()
-        with self.graph.as_default():
-            with self.session.as_default():
-                print("Model Loaded!")
+        #self.session = tf.Session()
+        #self.graph = tf.get_default_graph()
+
 
     def clean_up_sentence(self, sentence):
         sentence_words = nltk.word_tokenize(sentence)
@@ -52,8 +51,8 @@ class Chatbot:
         # filter out predictions below a threshold
         p = self.bow(sentence, self.words, show_details=False)
         res = None
-        with self.graph.as_default():
-            res = modelChatbot.predict(np.array([p]))[0]
+        #with self.graph.as_default():
+        res = modelChatbot.predict(np.array([p]))[0]
         ERROR_THRESHOLD = 0.25
         results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
         # sort by strength of probability

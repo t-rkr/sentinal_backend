@@ -16,6 +16,7 @@ def predict():
     message = request.args.get('message')
     intents = chat_bot.predict_class(message, chat_bot.model)
     res = chat_bot.getResponse(intents)
+    print(res)
     return jsonify(res)
 
 @app.route("/metrics", methods=["GET","POST"])
