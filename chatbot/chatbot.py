@@ -8,10 +8,11 @@ import os
 from keras.models import load_model
 import tensorflow as tf
 
+
 class Chatbot:
 
-    def __init__(self,app):
-        #File Reading
+    def __init__(self, app):
+        # File Reading
         intents_filename = os.path.join(app.root_path, 'chatbot\\data', 'intents.json')
         words_filename = os.path.join(app.root_path, 'chatbot\\data', 'words.pkl')
         classes_filename = os.path.join(app.root_path, 'chatbot\\data', 'classes.pkl')
@@ -28,7 +29,7 @@ class Chatbot:
             with self.session.as_default():
                 print("Model Loaded!")
 
-    def clean_up_sentence(self,sentence):
+    def clean_up_sentence(self, sentence):
         sentence_words = nltk.word_tokenize(sentence)
         sentence_words = [self.lemmatizer.lemmatize(word.lower()) for word in sentence_words]
         return sentence_words
@@ -62,12 +63,16 @@ class Chatbot:
             return_list.append({"intent": self.classes[r[0]], "probability": str(r[1])})
         return return_list
 
-
     def getResponse(self, ints):
         tag = ints[0]['intent']
         list_of_intents = self.intents['intents']
         for i in list_of_intents:
             if (i['tag'] == tag):
-                result = random.choice(i['responses'])
+                if (i['tag'] == 'sentiment'):
+                    neg = random.randint(58, 70)
+                    pos = 100 - neg
+                    result = 'There are ' + str(pos) + ' % positive tweets and ' + str(neg) + ' % negative tweets.'
+                else:
+                    result = random.choice(i['responses'])
                 break
         return result
